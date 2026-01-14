@@ -50,7 +50,7 @@ git clone <URL_DE_TU_REPOSITORIO_FORKEADO>
 1. Ejecuta `npm run dev` para iniciar el servidor en modo desarrollo.
 2. El servidor debería estar corriendo en `http://localhost:3000` (o el puerto que hayas especificado en el archivo `.env`).
 
-## Ejercicio
+## Ejercicio Mongoose
 
 ### 1. Testeo con Postman
 Usa Postman para probar las rutas de la API existentes.
@@ -75,13 +75,26 @@ Define nuevas rutas en `src/routes/` que utilicen los controladores que has crea
 ### 5. Testeo final
 Usa Postman para probar las nuevas rutas y asegurarte de que todo funciona correctamente.
 
-### 6. Push a tu repositorio
+## Ejercicio de relaciones
+
+### 1. Relaciones entre modelos
+Modifica los modelos existentes para establecer relaciones entre ellos utilizando referencias de Mongoose (ObjectId). Por ejemplo, puedes relacionar un modelo de "Usuarios" con un modelo de "Pedidos".
+
+### 2. Actualizar controladores y rutas
+Actualiza los controladores y las rutas para manejar las operaciones relacionadas con los modelos que ahora tienen relaciones entre sí.
+Almenos una operación CRUD que involucre las relaciones.
+Ejemplo: Añadir un pedido a un usuario específico.
+
+### 3. Testeo de relaciones
+Usa Postman para probar las operaciones que involucran las relaciones entre los modelos. Asegúrate de que puedes ver los datos relacionados correctamente (se ha añadido populate donde es necesario).
+
+## Push a tu repositorio
 Realiza un commit de tus cambios y haz push a tu repositorio forkeado en GitHub.
 ```bash
 git add .
-git commit -m "Añadido nuevo modelo, controladores y rutas"
+git commit -m "añadiendo ejercicios de Mongoose y relaciones"
 git push origin main
 ```
 
-### 7. Pull Request
+## Pull Request
 Crea un Pull Request en GitHub desde tu repositorio forkeado hacia el repositorio original.
