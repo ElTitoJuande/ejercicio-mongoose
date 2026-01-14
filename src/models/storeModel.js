@@ -9,7 +9,7 @@ const storeSchema = new Schema(
             required: true
         },
 
-        direction:
+        address:
         {
             type: String,
             required: true

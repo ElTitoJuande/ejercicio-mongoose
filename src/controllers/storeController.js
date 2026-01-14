@@ -12,7 +12,7 @@ const getAllStores = async (_req, res, next) => {
 const getOneStore = async (req, res, next) => {
     try {
         const { id } = req.params;
-        const store = await Store.find.findById(id);
+        const store = await Store.findById(id);
         if (!store) {
             res.status(404);
             throw new Error("Tienda no encontrado");
@@ -25,22 +25,25 @@ const getOneStore = async (req, res, next) => {
 
 const createStore = async (req, res, next) => {
     try {
-        const { name, direction } = req.body;
-        const newStore = new Store({ name, direction });
+        const { name, address, phone, products } = req.body;
+
+        const newStore = new Store({ name, address, phone, products });
         const savedStore = await newStore.save();
+
         res.status(201).json(savedStore);
     } catch (error) {
         next(error);
     }
 };
 
+
 const updateStore = async (req, res, next) => {
     try {
         const { id } = req.params;
-        const { name, price } = req.body;
+        const { name, address, phone, products } = req.body;
         const updatedStore = await Store.findByIdAndUpdate(
             id,
-            { name, price },
+            { name, address, phone, products },
             { new: true, runValidators: true }
         );
         if (!updatedStore) {
